@@ -41,7 +41,7 @@ QString QhSidebarPlugin::group() const
 
 QIcon QhSidebarPlugin::icon() const
 {
-    return QIcon(QLatin1String(":/quipa.png"));
+    return QIcon(QLatin1String(":/qhipa.png"));
 }
 
 QString QhSidebarPlugin::toolTip() const

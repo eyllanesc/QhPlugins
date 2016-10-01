@@ -20,8 +20,7 @@ void QhSidebar::paintEvent(QPaintEvent *event)
     fontText.setFamily("Helvetica Neue");
     p.setFont(fontText);
 
-    //Adapter l'adresse de la texture ici
-    QImage texture(":texture");
+    QImage texture(":/texture");
     p.fillRect(event->rect(), QBrush(texture));
     p.setPen(Qt::black);
     p.drawLine(event->rect().topRight(), event->rect().bottomRight());
@@ -59,7 +58,6 @@ void QhSidebar::paintEvent(QPaintEvent *event)
             p.setPen(QColor(55, 55, 55));
             p.drawLine(QPoint(0, actionRect.topLeft().y()+1), QPoint(actionRect.width(), actionRect.topRight().y()+1));
         }
-        //int icon_size = 48;
 
         QRect actionIconRect(0, action_y, event->rect().width(), action_height-20);
         QIcon  actionIcon(action->icon());

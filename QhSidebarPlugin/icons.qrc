@@ -1,6 +1,6 @@
 <RCC>
     <qresource prefix="/">
-        <file>quipa.png</file>
         <file alias="texture">texture.png</file>
+        <file>qhipa.png</file>
     </qresource>
 </RCC>
