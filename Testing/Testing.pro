@@ -23,5 +23,3 @@ LIBS += -L$$PWD/../QhSidebar/lib/ -lQhSidebar
 
 INCLUDEPATH += $$PWD/../QhSidebar/include
 
-RESOURCES += \
-    resource.qrc
