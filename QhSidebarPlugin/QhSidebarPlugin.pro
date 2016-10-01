@@ -1,5 +1,4 @@
-QT          += widgets uiplugin
-
+QT += widgets uiplugin designer
 QTDIR_build {
 # This is only for the Qt build. Do not use externally. We mean it.
 PLUGIN_TYPE = designer
@@ -15,21 +14,24 @@ TEMPLATE    = lib
 TARGET = $$qtLibraryTarget($$TARGET)
 
 target.path = $$[QT_INSTALL_PLUGINS]/designer
-sources.files = $$SOURCES $$HEADERS *.pro
-sources.path = $$[QT_INSTALL_EXAMPLES]/designer/qhsidebarplugin
-INSTALLS += target sources
-
+INSTALLS += target
 }
 
 INCLUDEPATH += $$PWD/include
 
-HEADERS     = $$PWD/include/qhsidebar.h \
-              $$PWD/include/qhsidebarplugin.h
+HEADERS     = $$PWD/include/qhsidebarplugin.h \
+              $$PWD/include/qhsidebartaskmenu.h \
+              $$PWD/include/qhsidebardialog.h
 
-SOURCES     = $$PWD/src/qhsidebar.cpp \
-              $$PWD/src/qhsidebarplugin.cpp
+SOURCES     = $$PWD/src/qhsidebarplugin.cpp \
+              $$PWD/src/qhsidebartaskmenu.cpp \
+              $$PWD/src/qhsidebardialog.cpp
 
 RESOURCES += \
     icons.qrc
 
 DESTDIR = $$PWD/lib
+
+LIBS += -L$$PWD/../QhSidebar/lib/ -lQhSidebar
+
+INCLUDEPATH += $$PWD/../QhSidebar/include

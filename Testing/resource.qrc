@@ -1,6 +1,5 @@
 <RCC>
     <qresource prefix="/">
-        <file>sidebar.png</file>
         <file>texture.png</file>
     </qresource>
 </RCC>

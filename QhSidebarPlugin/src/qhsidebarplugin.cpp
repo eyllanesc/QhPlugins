@@ -1,7 +1,11 @@
-#include "qhsidebar.h"
+#include <qhsidebar.h>
 #include "qhsidebarplugin.h"
 
+#include <QtDesigner/QDesignerFormEditorInterface>
+#include <QtDesigner/QExtensionManager>
 #include <QtPlugin>
+
+#include <qhsidebartaskmenu.h>
 
 QhSidebarPlugin::QhSidebarPlugin(QObject *parent)
     : QObject(parent)
@@ -9,12 +13,18 @@ QhSidebarPlugin::QhSidebarPlugin(QObject *parent)
     m_initialized = false;
 }
 
-void QhSidebarPlugin::initialize(QDesignerFormEditorInterface * /* core */)
+void QhSidebarPlugin::initialize(QDesignerFormEditorInterface *formEditor)
 {
     if (m_initialized)
         return;
 
     // Add extension registrations, etc. here
+
+    QExtensionManager *manager = formEditor->extensionManager();
+    Q_ASSERT(manager != 0);
+
+    manager->registerExtensions(new QhSidebarMenuFactory(manager),
+                                Q_TYPEID(QDesignerTaskMenuExtension));
 
     m_initialized = true;
 }

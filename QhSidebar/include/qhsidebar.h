@@ -13,12 +13,17 @@ class QDESIGNER_WIDGET_EXPORT QhSidebar : public QWidget
 {
     Q_OBJECT
 
+    Q_PROPERTY(QString texture READ texture WRITE setTexture)
 public:
     QhSidebar(QWidget *parent = 0);
     ~QhSidebar();
 
     void addAction(QAction *action);
     QAction *addAction(const QString &text, const QIcon &icon = QIcon());
+
+    QString texture() const;
+    void setTexture(const QString &value);
+
 protected:
     void paintEvent(QPaintEvent *event);
     void mousePressEvent(QMouseEvent *event);
@@ -32,6 +37,7 @@ private:
     QAction *_checkedAction;
 
     int action_height = 90;
+    QString m_texture;
 };
 
 #endif

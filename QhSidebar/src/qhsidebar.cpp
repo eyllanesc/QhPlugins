@@ -5,6 +5,7 @@ QhSidebar::QhSidebar(QWidget *parent) :
     QWidget(parent), _pressedAction(NULL), _checkedAction(NULL)
 {
     setFixedWidth(90);
+    m_texture = ":/texture";
 }
 
 QhSidebar::~QhSidebar()
@@ -20,8 +21,8 @@ void QhSidebar::paintEvent(QPaintEvent *event)
     fontText.setFamily("Helvetica Neue");
     p.setFont(fontText);
 
-    QImage texture(":/texture");
-    p.fillRect(event->rect(), QBrush(texture));
+    QImage img_texture(m_texture);
+    p.fillRect(event->rect(), QBrush(img_texture));
     p.setPen(Qt::black);
     p.drawLine(event->rect().topRight(), event->rect().bottomRight());
 
@@ -136,4 +137,14 @@ QAction* QhSidebar::actionAt(const QPoint &at)
         action_y += actionRect.height();
     }
     return NULL;
+}
+
+QString QhSidebar::texture() const
+{
+    return m_texture;
+}
+
+void QhSidebar::setTexture(const QString &value)
+{
+    m_texture = value;
 }

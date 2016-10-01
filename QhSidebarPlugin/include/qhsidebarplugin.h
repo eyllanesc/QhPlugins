@@ -1,7 +1,7 @@
 #ifndef QHSIDEBARPLUGIN_H
 #define QHSIDEBARPLUGIN_H
 
-#include <QDesignerCustomWidgetInterface>
+#include <QtUiPlugin/QDesignerCustomWidgetInterface>
 
 class QhSidebarPlugin : public QObject, public QDesignerCustomWidgetInterface
 {
@@ -24,7 +24,7 @@ public:
     QString toolTip() const;
     QString whatsThis() const;
     QWidget *createWidget(QWidget *parent);
-    void initialize(QDesignerFormEditorInterface *core);
+    void initialize(QDesignerFormEditorInterface *formEditor);
 
 private:
     bool m_initialized;
