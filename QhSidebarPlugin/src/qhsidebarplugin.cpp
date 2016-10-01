@@ -36,12 +36,12 @@ QString QhSidebarPlugin::name() const
 
 QString QhSidebarPlugin::group() const
 {
-    return QLatin1String("Sidebar");
+    return QLatin1String("Qhipa Widgets");
 }
 
 QIcon QhSidebarPlugin::icon() const
 {
-    return QIcon(QLatin1String(":/qhipa.png"));
+    return QIcon(QLatin1String(":/sidebar.png"));
 }
 
 QString QhSidebarPlugin::toolTip() const

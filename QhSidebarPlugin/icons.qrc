@@ -1,6 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file alias="texture">texture.png</file>
-        <file>qhipa.png</file>
+        <file>sidebar.png</file>
     </qresource>
 </RCC>
